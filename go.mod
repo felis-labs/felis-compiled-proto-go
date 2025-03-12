@@ -1,4 +1,4 @@
-module github.com/yourusername/exchange
+module github.com/felis-labs/felis-compiled-proto-go
 
 go 1.21
 
