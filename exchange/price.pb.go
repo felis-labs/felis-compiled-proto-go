@@ -25,7 +25,7 @@ const (
 type PriceUpdate struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Coin           string                 `protobuf:"bytes,1,opt,name=coin,proto3" json:"coin,omitempty"`
-	Price          int32                  `protobuf:"varint,2,opt,name=price,proto3" json:"price,omitempty"`
+	Price          float64                `protobuf:"fixed64,2,opt,name=price,proto3" json:"price,omitempty"`
 	EventTimestamp *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=event_timestamp,json=eventTimestamp,proto3" json:"event_timestamp,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -68,7 +68,7 @@ func (x *PriceUpdate) GetCoin() string {
 	return ""
 }
 
-func (x *PriceUpdate) GetPrice() int32 {
+func (x *PriceUpdate) GetPrice() float64 {
 	if x != nil {
 		return x.Price
 	}
@@ -89,7 +89,7 @@ const file_exchange_price_proto_rawDesc = "" +
 	"\x14exchange/price.proto\x12\acoincap\x1a\x1fgoogle/protobuf/timestamp.proto\"|\n" +
 	"\vPriceUpdate\x12\x12\n" +
 	"\x04coin\x18\x01 \x01(\tR\x04coin\x12\x14\n" +
-	"\x05price\x18\x02 \x01(\x05R\x05price\x12C\n" +
+	"\x05price\x18\x02 \x01(\x01R\x05price\x12C\n" +
 	"\x0fevent_timestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x0eeventTimestampB\x18Z\x16./compiled-go/exchangeb\x06proto3"
 
 var (
